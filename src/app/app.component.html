@@ -1,8 +1,20 @@
-<h1>Angular Playground</h1>
-<nav>
-    <ul>
-        <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
-        <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
-    </ul>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Angular Playground</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li>
+            <a routerLink="/first-component" routerLinkActive="active">First Component</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/second-component" routerLinkActive="active">Second Component</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+    </div>
 </nav>
 <router-outlet></router-outlet>
