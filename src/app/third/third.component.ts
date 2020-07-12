@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-third',
+  selector: 'wpe-third',
   templateUrl: './third.component.html'
 })
 export class ThirdComponent implements OnInit {

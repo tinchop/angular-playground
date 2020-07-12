@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-second',
+  selector: 'wpe-second',
   templateUrl: './second.component.html',
 })
 export class SecondComponent implements OnInit {

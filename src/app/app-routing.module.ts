@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FirstComponent } from './first/first.component';
+import { TodayComponent } from './today/today.component';
 import { SecondComponent } from './second/second.component';
 import { ThirdComponent } from './third/third.component';
 
 
 const routes: Routes = [
-  { path: 'first-component', component: FirstComponent },
+  { path: 'today-component', component: TodayComponent },
   { path: 'second-component', component: SecondComponent },
   { path: 'third-component', component: ThirdComponent }
 ];
