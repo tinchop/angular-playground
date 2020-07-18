@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopulationService } from '../service/population.service';
 
 @Component({
   selector: 'wpe-today',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private populationService: PopulationService) { }
 
   currentPopulation: any[] = [];
 
@@ -15,17 +16,7 @@ export class TodayComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    let data: any[] = [
-      { name: 'North America', value: 579024000 },
-      { name: 'South America', value: 422535000 },
-      { name: 'Europe', value: 738849000 },
-      { name: 'Africa', value: 1216130000 },
-      { name: 'Asia', value: 4581757408 },
-      { name: 'Oceania', value: 38304000 },
-      { name: 'Antarctica', value: 1106 }
-    ];
-
-    this.currentPopulation = data.sort((a, b) => { return (a.name >= b.name) ? 1 : -1; });
+    this.currentPopulation = this.populationService.getContinentsData();
   }
 
 }
