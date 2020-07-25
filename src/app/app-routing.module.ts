@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TodayComponent } from './today/today.component';
-import { SecondComponent } from './second/second.component';
-import { ThirdComponent } from './third/third.component';
+import { TomorrowComponent } from './tomorrow/tomorrow.component';
+import { YesterdayComponent } from './yesterday/yesterday.component';
 
 
 const routes: Routes = [
+
+  { path: 'yesterday-component', component: YesterdayComponent },
   { path: 'today-component', component: TodayComponent },
-  { path: 'second-component', component: SecondComponent },
-  { path: 'third-component', component: ThirdComponent }
+  { path: 'tomorrow-component', component: TomorrowComponent },
+  { path: '', redirectTo: '/today-component', pathMatch: 'full' }
 ];
 
 @NgModule({

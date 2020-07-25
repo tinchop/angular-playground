@@ -3,20 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SecondComponent } from './second/second.component';
-import { ThirdComponent } from './third/third.component';
 import { TodayComponent } from './today/today.component';
+import { TomorrowComponent } from './tomorrow/tomorrow.component';
+import { YesterdayComponent } from './yesterday/yesterday.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    YesterdayComponent,
     TodayComponent,
-    SecondComponent,
-    ThirdComponent
+    TomorrowComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgxChartsModule
   ],
