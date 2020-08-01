@@ -7,6 +7,7 @@ import { TodayComponent } from './today/today.component';
 import { TomorrowComponent } from './tomorrow/tomorrow.component';
 import { YesterdayComponent } from './yesterday/yesterday.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxChartsModule
   ],
   providers: [],

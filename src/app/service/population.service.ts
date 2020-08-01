@@ -1,24 +1,36 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PopulationService {
 
-  continentsData: any[] = [
-    { name: 'North America', value: 579024000 },
-    { name: 'South America', value: 422535000 },
-    { name: 'Europe', value: 738849000 },
-    { name: 'Africa', value: 1216130000 },
-    { name: 'Asia', value: 4581757408 },
-    { name: 'Oceania', value: 38304000 },
-    { name: 'Antarctica', value: 1106 }
-  ];
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  public getContinentsData(): any[] {
-    return this.continentsData.sort((a, b) => { return (a.name >= b.name) ? 1 : -1; });
+  public getAllData(): Observable<any> {
+    return this.http.get("./assets/data.json");
   }
+
+  public getTotalsByContinent(data: any): any {
+    let result = [];
+    data.continents.forEach(continent => {
+
+      let continentPopulation = 0;
+      continent.countries.forEach(country => {
+        continentPopulation += country.population;
+      });
+
+      let resultItem = { name: continent.name, value: continentPopulation };
+      result.push(resultItem);
+
+    });
+
+    return result.sort((a, b) => { return (a.value <= b.value) ? 1 : -1; });
+  }
+
+
+
 
 }
