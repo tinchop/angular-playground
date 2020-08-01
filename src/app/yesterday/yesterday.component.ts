@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'wpe-yesterday',
+  selector: 'ngp-yesterday',
   templateUrl: './yesterday.component.html',
 })
 export class YesterdayComponent implements OnInit {

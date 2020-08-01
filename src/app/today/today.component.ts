@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopulationService } from '../service/population.service';
 
 @Component({
-  selector: 'wpe-today',
+  selector: 'ngp-today',
   templateUrl: './today.component.html',
 })
 export class TodayComponent implements OnInit {
