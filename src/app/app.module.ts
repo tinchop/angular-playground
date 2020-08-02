@@ -8,6 +8,7 @@ import { TomorrowComponent } from './tomorrow/tomorrow.component';
 import { YesterdayComponent } from './yesterday/yesterday.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { PodiumComponent } from './shared/podium/podium.component';
 
 
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     YesterdayComponent,
     TodayComponent,
-    TomorrowComponent
+    TomorrowComponent,
+    PodiumComponent
   ],
   imports: [
     BrowserModule,
