@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-podium',
+  selector: 'ngp-podium',
   templateUrl: './podium.component.html',
   styleUrls: ['./podium.component.scss']
 })
 export class PodiumComponent implements OnInit {
+
+  @Input() title: string;
+  @Input() type: string;
+  @Input() data: any[];
 
   constructor() { }
 

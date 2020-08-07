@@ -665,14 +665,6 @@
                 {
                     "name": "Vatican City",
                     "population": 797
-                },
-                {
-                    "name": "Turkey",
-                    "population": 84644753
-                },
-                {
-                    "name": "Cyprus",
-                    "population": 1190007
                 }
             ]
         },
@@ -874,6 +866,14 @@
                 {
                     "name": "Maldives",
                     "population": 345000
+                },
+                {
+                    "name": "Turkey",
+                    "population": 84644753
+                },
+                {
+                    "name": "Cyprus",
+                    "population": 1190007
                 }
             ]
         },
