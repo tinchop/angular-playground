@@ -1,37 +1,18 @@
-<div class="container-fluid p-2">
+<div class="container-fluid">
     <div class="row" style="min-height: 400px;">
-        <div class="col-12">
+        <div class="col">
             <ngx-charts-pie-grid [scheme]="colorScheme" [results]="currentPopulation" [tooltipDisabled]="true">
             </ngx-charts-pie-grid>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries Worldwide'" [type]="'Country'" [data]="globalPodium"></ngp-podium>
-        </div>
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in Asia'" [type]="'Country'" [data]="asiaPodium"></ngp-podium>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in Africa'" [type]="'Country'" [data]="africaPodium"></ngp-podium>
-        </div>
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in Europe'" [type]="'Country'" [data]="europePodium"></ngp-podium>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in North America'" [type]="'Country'" [data]="northAmericaPodium"></ngp-podium>
-        </div>
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in South America'" [type]="'Country'" [data]="southAmericaPodium"></ngp-podium>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-6">
-            <ngp-podium [title]="'5 Most Populated Countries in Oceania'" [type]="'Country'" [data]="oceaniaPodium"></ngp-podium>
+    <div class="row" style="min-height: 400px;">
+        <div class="col">
+            <ngx-charts-bar-vertical 
+            [scheme]="colorScheme"
+            [results]="barChartData"
+            [xAxis]="true"
+            [yAxis]="true">
+          </ngx-charts-bar-vertical>
         </div>
     </div>
 </div>

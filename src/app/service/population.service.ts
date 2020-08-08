@@ -15,7 +15,7 @@ export class PopulationService {
 
   private sortNameValue = (a: any, b: any) => { return (a.value <= b.value) ? 1 : -1; }
 
-  private sortCountriesByPopulation = (a: any, b: any) => { return (a.population <= b.population) ? 1 : -1; }
+  private sortByPopulation = (a: any, b: any) => { return (a.population <= b.population) ? 1 : -1; }
 
   public getTotalsGroupedByContinent(data: any): any {
     let result = [];
@@ -33,8 +33,8 @@ export class PopulationService {
     return result.sort(this.sortNameValue);
   }
 
-  public getGlobalPodium(data: any, podiumSize: number) {
-    const countries = this.getCountries(data).sort(this.sortCountriesByPopulation);
+  public getPodium(data: any, podiumSize: number) {
+    const countries = this.getCountries(data).sort(this.sortByPopulation);
     let result = [];
     for (let country of countries) {
       if (result.length >= podiumSize) break;
@@ -44,7 +44,7 @@ export class PopulationService {
   }
 
   public getPodiumByContinent(data: any, continentName: string, podiumSize: number): any[] {
-    const countries = this.getCountriesByContinent(data, continentName).sort(this.sortCountriesByPopulation);
+    const countries = this.getCountriesByContinent(data, continentName).sort(this.sortByPopulation);
     let result = [];
     for (let country of countries) {
       if (result.length >= podiumSize) break;
