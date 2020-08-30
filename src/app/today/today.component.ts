@@ -4,6 +4,7 @@ import { PopulationService } from '../service/population.service';
 @Component({
   selector: 'ngp-today',
   templateUrl: './today.component.html',
+  styleUrls: ['./today.component.scss']
 })
 export class TodayComponent implements OnInit {
 
