@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row mb-5 pie-grid-row">
-        <ngx-charts-pie-grid [scheme]="colorScheme" [results]="currentPopulation" [tooltipDisabled]="true">
+        <ngx-charts-pie-grid [scheme]="pieGridScheme" [results]="currentPopulation" [tooltipDisabled]="true">
         </ngx-charts-pie-grid>
     </div>
     <div class="row mb-5 bar-vertical-row">
-        <ngx-charts-bar-vertical [scheme]="colorScheme" [results]="barChartData" [xAxis]="true" [yAxis]="true">
+        <ngx-charts-bar-vertical [scheme]="barVerticalScheme" [results]="barChartData" [xAxis]="true" [yAxis]="true">
         </ngx-charts-bar-vertical>
     </div>
 </div>
