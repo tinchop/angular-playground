@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PopulationService } from '../service/population.service';
 import { PaletteService } from '../service/palette.service';
+import { PopulationService } from '../service/population.service';
 import { NgxChartsColorScheme } from '../shared/model/ngx-charts-color-scheme';
 
 @Component({
@@ -23,8 +23,8 @@ export class TodayComponent implements OnInit {
     this.pieGridScheme = this.paletteService.getBlueScheme(6);
     this.barVerticalScheme = this.paletteService.getFullBlueScheme();
     this.populationService.getAllData().subscribe(data => {
-      this.currentPopulation = this.populationService.getTotalsGroupedByContinent(data);
-      this.barChartData = this.populationService.getPodium(data, 18);
+      this.currentPopulation = this.populationService.getTodaysTotalsGroupedByContinent(data);
+      this.barChartData = this.populationService.getTodaysPodium(data, 18);
     }
     );
   }

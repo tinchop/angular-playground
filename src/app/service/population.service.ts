@@ -17,9 +17,9 @@ export class PopulationService {
 
   private sortByPopulation = (a: any, b: any) => { return (a.population <= b.population) ? 1 : -1; }
 
-  public getTotalsGroupedByContinent(data: any): any {
+  public getTodaysTotalsGroupedByContinent(data: any): any {
     let result = [];
-    data.continents.forEach(continent => {
+    data.today.continents.forEach(continent => {
 
       let continentPopulation = 0;
       continent.countries.forEach(country => {
@@ -33,8 +33,8 @@ export class PopulationService {
     return result.sort(this.sortNameValue);
   }
 
-  public getPodium(data: any, podiumSize: number) {
-    const countries = this.getCountries(data).sort(this.sortByPopulation);
+  public getTodaysPodium(data: any, podiumSize: number) {
+    const countries = this.getTodaysCountries(data).sort(this.sortByPopulation);
     let result = [];
     for (let country of countries) {
       if (result.length >= podiumSize) break;
@@ -43,8 +43,8 @@ export class PopulationService {
     return result;
   }
 
-  public getPodiumByContinent(data: any, continentName: string, podiumSize: number): any[] {
-    const countries = this.getCountriesByContinent(data, continentName).sort(this.sortByPopulation);
+  public getTodaysPodiumByContinent(data: any, continentName: string, podiumSize: number): any[] {
+    const countries = this.getTodaysCountriesByContinent(data, continentName).sort(this.sortByPopulation);
     let result = [];
     for (let country of countries) {
       if (result.length >= podiumSize) break;
@@ -53,17 +53,29 @@ export class PopulationService {
     return result;
   }
 
-  public getCountries(data: any): any[] {
+  public getTodaysCountries(data: any): any[] {
     let countries = [];
-    data.continents.forEach(continent => countries = countries.concat(continent.countries));
+    data.today.continents.forEach(continent => countries = countries.concat(continent.countries));
     return countries;
   }
 
-  public getCountriesByContinent(data: any, continentName: string): any[] {
-    for (let continent of data.continents) {
+  public getTodaysCountriesByContinent(data: any, continentName: string): any[] {
+    for (let continent of data.today.continents) {
       if (continentName.valueOf() === continent.name.valueOf()) return continent.countries;
     }
     throw Error('Continent not found:' + continentName);
+  }
+
+  public getYesterdaysPopulation(data: any): number {
+    return data.yesterday.population;
+  }
+
+  public getTodaysPopulation(data: any): number {
+    return data.today.population;
+  }
+
+  public getTomorrowsPopulation(data: any): number {
+    return data.tomorrow.population;
   }
 
 }
